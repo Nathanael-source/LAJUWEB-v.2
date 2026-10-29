@@ -1474,6 +1474,54 @@ section {
   }
 }
 @media (max-width: 500px) {
+  .hero-art {
+    height: 270px;
+  }
+  .browser {
+    inset: 12px 0 10px;
+    box-shadow: 8px 8px 0 var(--lime);
+  }
+  .note {
+    display: none;
+  }
+  .mock {
+    position: relative;
+    isolation: isolate;
+    padding: 14px;
+  }
+  .mock-nav {
+    position: relative;
+    z-index: 1;
+  }
+  .mock-nav span {
+    display: none;
+  }
+  .mock-title,
+  .mock-pill {
+    position: relative;
+    z-index: 1;
+  }
+  .mock-title {
+    margin-top: 42px;
+    font-size: clamp(24px, 8vw, 28px);
+    letter-spacing: -1.5px;
+  }
+  .mock-pill {
+    margin-top: 14px;
+  }
+  .sun {
+    top: 48px;
+    right: 14px;
+    width: 78px;
+    height: 78px;
+    box-shadow: 0 0 0 9px #f4e7ad88;
+  }
+  .leaf {
+    right: 15px;
+    bottom: 9px;
+    width: 84px;
+    height: 98px;
+  }
   .process .steps {
     grid-template-columns: 1fr;
   }
