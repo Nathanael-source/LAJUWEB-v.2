@@ -3,12 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#10120e" />
+    <meta name="theme-color" content="#071a33" />
     <meta
       name="description"
-      content="LajuWeb merancang website bisnis, toko online, dan landing page."
+      content="LajuWeb membantu bisnis merancang website yang jelas, responsif, dan sesuai kebutuhan."
     />
     <title>LajuWeb | Website bisnis dan toko online</title>
+    <script>
+      try {
+        const savedTheme = localStorage.getItem("lajuweb-theme");
+        document.documentElement.dataset.theme =
+          savedTheme === "light" || savedTheme === "dark" ? savedTheme : "dark";
+      } catch (error) {
+        document.documentElement.dataset.theme = "dark";
+        console.error("Preferensi tema tidak dapat dibaca.", error);
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -32,50 +42,70 @@
           ><a href="#karya">Karya</a><a href="#proses">Proses</a
           ><a href="#biaya">Biaya & FAQ</a
           ><a class="cta" href="#kontak">Bahas kebutuhan <span>↗</span></a>
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-pressed="true"
+            aria-label="Mode gelap aktif. Beralih ke mode terang"
+            title="Beralih ke mode terang"
+          >
+            <span class="theme-toggle-icon" aria-hidden="true">☼</span>
+            <span class="theme-toggle-label">Mode gelap</span>
+          </button>
         </div>
       </nav>
     </header>
     <main>
       <section class="hero shell" id="beranda">
         <div class="reveal show">
-          <div class="eyebrow">Website untuk usaha kecil dan brand lokal</div>
-          <h1>Laju Pembuatan Webnya,<br /><em>Puas Kosumen nya.</em></h1>
+          <div class="eyebrow">Dibuat dengan cermat, dikerjakan bersama</div>
+          <h1>Website yang kamu<br /><em>rancang, kami bangun & jaga.</em></h1>
           <p class="lead">
-            Kami merancang website Landing Page, Company Profile, dan Website Custom. Isi
-            dan alurnya disusun agar pengunjung cepat menemukan informasi
-            penting.
+            Dari landing page hingga toko online, kami bantu susun halaman,
+            desain, dan fitur agar pengunjung mudah menemukan informasi dan
+            mengambil tindakan.
           </p>
           <div class="hero-actions">
             <a class="button" href="#karya"
-              >Lihat contoh konsep <span>↗</span></a
+              >Lihat contoh konsep</a
             ><a class="quiet-link" href="#tentang">Cara kerja <span>↓</span></a>
           </div>
           <div class="proof">
             <div>
-              <b>Dari rencana sampai rilis</b>Konten · desain · pengembangan
+              <b>Dari rencana sampai rilis</b>Dirancang bersama · dikerjakan dengan cermat
             </div>
           </div>
         </div>
         <div class="hero-art reveal show" aria-label="Pratinjau desain website">
           <div class="orbit"></div>
-          <div class="note top">Contoh konsep <b>website kafe</b></div>
+          <div class="note top">Contoh konsep<b>Website bisnis</b></div>
           <div class="browser">
             <div class="bar">
-              <span class="dots"><i></i><i></i><i></i></span><b>kopi.senja</b
-              ><span>☰</span>
+              <span class="dots"><i></i><i></i><i></i></span>
+              <b>ruangtumbuh.id</b><span aria-hidden="true">↗</span>
             </div>
-            <div class="mock">
+            <div class="mock business-preview">
               <div class="mock-nav">
-                <b>senja.</b><span>MENU · CERITA · KUNJUNGI</span>
+                <b>ruang<span>.</span></b>
+                <span>LAYANAN · TENTANG · KONTAK</span>
               </div>
-              <div class="mock-title">
-                GOOD COFFEE,<br /><i>SLOW</i> MORNINGS.
+              <div class="business-preview-hero">
+                <div class="business-preview-copy">
+                  <span class="business-preview-eyebrow">STRATEGI · DESAIN · DIGITAL</span>
+                  <h2>Ide besar,<br /><em>langkah nyata.</em></h2>
+                  <p>
+                    Membantu bisnis berkembang lewat pengalaman digital yang
+                    terasa tepat.
+                  </p>
+                  <span class="business-preview-cta">KENALI LAYANAN <b>↗</b></span>
+                </div>
+                <div class="business-preview-art" aria-hidden="true">
+                  <i></i><b>RT</b><span>RUANG<br />TUMBUH</span>
+                </div>
               </div>
-              <span class="mock-pill">TEMUKAN KAMI ↗</span><i class="sun"></i
-              ><i class="leaf"></i>
             </div>
           </div>
-          <div class="note bottom">Tampilan contoh<b>Konsep kafe</b></div>
+          <div class="note bottom">Tampilan responsif<b>Siap di berbagai perangkat</b></div>
         </div>
       </section>
       <div class="strip">
@@ -105,43 +135,82 @@
         <div class="section-head reveal">
           <div>
             <div class="eyebrow">Layanan</div>
-            <h2>Jenis website yang<br /><em>bisa dibuat.</em></h2>
+            <h2>Dirancang untuk tujuan.<br /><em>Dibangun untuk bertumbuh.</em></h2>
           </div>
           <p>
-            Pilih jenis website berdasarkan kebutuhan. Isi halaman dan fiturnya
-            dibahas sebelum desain dimulai.
+            Setiap bisnis punya kebutuhan yang berbeda. Kami bantu memilih
+            halaman dan fitur yang sesuai dengan tujuan websitemu.
           </p>
         </div>
         <div class="cards">
           <article class="card reveal">
-            <span class="index">01 / 03</span>
-            <div class="icon">↗</div>
+            <div class="card-top">
+              <span class="index">01 / 03</span>
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64" fill="none">
+                  <circle cx="32" cy="32" r="25" />
+                  <path d="M7 32h50M32 7c7 7 11 15 11 25S39 50 32 57M32 7c-7 7-11 15-11 25s4 18 11 25M12 19c6 5 13 8 20 8s14-3 20-8M12 45c6-5 13-8 20-8s14 3 20 8" />
+                </svg>
+              </div>
+            </div>
             <h3>Website Bisnis</h3>
             <p>
-              Halaman untuk menjelaskan usaha, layanan, lokasi, dan cara
-              menghubungi bisnis.
+              Kenalkan usaha, layanan, dan cara menghubungi bisnis melalui
+              website yang rapi dan mudah diakses.
             </p>
-            <a href="#kontak">Tanya layanan ↗</a>
+            <a
+              class="service-select"
+              href="#kontak"
+              data-service="Konsultasi layanan"
+              >Bahas kebutuhan ↗</a
+            >
           </article>
           <article class="card reveal">
-            <span class="index">02 / 03</span>
-            <div class="icon">◒</div>
+            <div class="card-top">
+              <span class="index">02 / 03</span>
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64" fill="none">
+                  <path d="M8 25 15 9h34l7 16M8 25h48v28a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V25Z" />
+                  <path d="M8 25c0 6 9 8 12 2 3 6 11 6 14 0 3 6 11 6 14 0 3 6 8 4 8-2M27 57V38h10v19" />
+                </svg>
+              </div>
+            </div>
             <h3>Toko Online</h3>
             <p>
-              Katalog produk dengan halaman detail dan alur pemesanan sesuai
-              kebutuhan toko.
+              Tampilkan katalog, detail produk, dan alur pemesanan agar calon
+              pembeli mudah berbelanja.
             </p>
-            <a href="#kontak">Tanya layanan ↗</a>
+            <a
+              class="service-select"
+              href="#kontak"
+              data-service="Konsultasi layanan"
+              >Bahas kebutuhan ↗</a
+            >
           </article>
           <article class="card reveal">
-            <span class="index">03 / 03</span>
-            <div class="icon">✳</div>
+            <div class="card-top">
+              <span class="index">03 / 03</span>
+              <div class="icon" aria-hidden="true">
+                <svg viewBox="0 0 64 64" fill="none">
+                  <circle cx="22" cy="18" r="12" />
+                  <circle cx="42" cy="18" r="12" />
+                  <path d="M6 31h52v23H6zM12 37v11h40V37M19 48v6m26-6v6" />
+                  <text x="22" y="20.5" fill="currentColor" stroke="none" font-size="7" font-weight="700" text-anchor="middle">UI</text>
+                  <text x="42" y="20.5" fill="currentColor" stroke="none" font-size="7" font-weight="700" text-anchor="middle">UX</text>
+                </svg>
+              </div>
+            </div>
             <h3>UI/UX & Landing Page</h3>
             <p>
-              Halaman promosi dengan satu tujuan, misalnya mengenalkan produk
-              atau mengumpulkan calon pelanggan.
+              Susun halaman yang fokus pada satu tujuan: mengenalkan produk,
+              mengumpulkan calon pelanggan, atau mendorong tindakan.
             </p>
-            <a href="#kontak">Tanya layanan ↗</a>
+            <a
+              class="service-select"
+              href="#kontak"
+              data-service="Konsultasi layanan"
+              >Bahas kebutuhan ↗</a
+            >
           </article>
         </div>
       </section>
@@ -155,9 +224,8 @@
             <div class="eyebrow">Tentang LajuWeb</div>
             <h2>Mulai dari kebutuhan<br /><em>bisnismu.</em></h2>
             <p>
-              Kami mulai dari tujuan website dan informasi yang perlu dicari
-              pengunjung. Setelah itu, kami susun halaman, desain, dan fitur
-              yang dibutuhkan.
+              Kami menerjemahkan kebutuhan usahamu menjadi website yang mudah
+              dipahami, nyaman digunakan, dan siap berkembang.
             </p>
             <div class="values">
               <span><i>01 — </i>Bahas tujuan dulu</span
@@ -168,156 +236,107 @@
           </div>
         </div>
       </section>
-      <section>
+      <section id="karya">
         <div class="pad shell">
           <div class="section-head reveal">
             <div>
-              <div class="eyebrow">Contoh desain</div>
-              <h2>Satu kafe, <em>satu toko.</em></h2>
-            <p>
-              Keduanya adalah konsep latihan, bukan proyek klien. <br> Contoh ini
-              menunjukkan susunan halaman untuk kafe dan toko perlengkapan
-              rumah.
-            </p>
+              <div class="eyebrow">Studi layout</div>
+              <h2>Contoh konsep,<br /><em>bukan proyek klien.</em></h2>
             </div>
+            <p>
+              Empat eksplorasi mandiri untuk menunjukkan cara menyusun
+              informasi. Tanpa mockup browser atau klaim sebagai hasil kerja
+              klien.
+            </p>
           </div>
-          
+
           <div class="work-list">
-            <article class="work reveal kotak">
-              <div class="work-visual coffee">
-                <div class="portfolio-browser cafe">
-                  <div class="portfolio-bar">
-                    <span><i></i><i></i><i></i></span><small>contoh-kafe</small>
-                  </div>
-                  <div class="site-nav">
-                    <b>TERAS RASA</b
-                    ><span>MENU&nbsp;&nbsp; TENTANG&nbsp;&nbsp; KONTAK</span>
-                  </div>
-                  <div class="cafe-main">
-                    <div>
-                      <small>KONSEP KAFE · TAMPILAN DEMO</small
-                      ><strong
-                        >Ngopi santai,<br /><em>cerita jalan.</em></strong
-                      >
-                      <p>
-                        Lihat menu, suasana, dan informasi kafe dalam satu
-                        halaman.
-                      </p>
-                      <button>Lihat menu →</button>
-                    </div>
-                    <div class="cafe-cup">☕</div>
-                  </div>
+            <article class="work study-card study-cafe reveal">
+              <div class="study-visual">
+                <div class="study-top">
+                  <span>STUDI 01</span><span>NAMA & KONTEN HANYA CONTOH</span>
+                </div>
+                <div class="study-cafe-copy">
+                  <span class="study-overline">KEDAI KOPI · BANDUNG</span>
+                  <h3>Ngopi di<br /><em>Jalan Braga.</em></h3>
+                  <p>Kopi, makanan ringan, dan tempat duduk untuk mampir atau bekerja.</p>
+                </div>
+                <div class="study-menu">
+                  <span>INFO KUNJUNGAN</span>
+                  <span>Senin–Jumat <b>08.00–21.00</b></span>
+                  <span>Sabtu–Minggu <b>09.00–22.00</b></span>
+                  <span>Lokasi <b>Bandung</b></span>
                 </div>
               </div>
-              <div class="work-meta">
-                <div>
-                  <h3>Teras Rasa</h3>
-                  <p>Konsep latihan · Bukan proyek klien</p>
-                </div>
-                <b>↗</b>
+              <div class="study-meta">
+                <h3>Halaman kedai kopi</h3>
+                <p>Menampilkan suasana, jam buka, lokasi, dan tautan menu.</p>
               </div>
             </article>
-            <article class="work reveal kotak">
-              <div class="work-visual skin">
-                <div class="portfolio-browser home-site">
-                  <div class="portfolio-bar">
-                    <span><i></i><i></i><i></i></span><small>contoh-toko</small>
-                  </div>
-                  <div class="site-nav">
-                    <b>rapi.</b
-                    ><span>PRODUK&nbsp;&nbsp; CERITA&nbsp;&nbsp; CART (0)</span>
-                  </div>
-                  <div class="home-main">
-                    <div>
-                      <small>BARANG RUMAH PILIHAN</small
-                      ><strong>Biar rumah<br />makin <em>rapi.</em></strong>
-                      <p>
-                        Cari barang rumah dari katalog, lalu lihat detail produk
-                        sebelum memesan.
-                      </p>
-                      <button>Belanja sekarang →</button>
-                    </div>
-                    <div class="home-product">
-                      <span>⌒</span><small>VAS KAYU</small>
-                    </div>
-                  </div>
+            <article class="work study-card study-home reveal">
+              <div class="study-visual">
+                <div class="study-top">
+                  <span>STUDI 02</span><span>NAMA & KONTEN HANYA CONTOH</span>
+                </div>
+                <div class="study-home-copy">
+                  <span class="study-overline">TOKO PERLENGKAPAN RUMAH</span>
+                  <h3>Katalog<br /><em>perabot.</em></h3>
+                  <p>Lihat pilihan meja, lampu, dan penyimpanan untuk rumah.</p>
+                </div>
+                <div class="study-catalog">
+                  <span>01 <b>Meja kerja</b><i>Rp850.000</i></span>
+                  <span>02 <b>Lampu meja</b><i>Rp320.000</i></span>
+                  <span>03 <b>Rak dinding</b><i>Rp275.000</i></span>
+                  <span class="study-catalog-note">Harga pada contoh ini hanya ilustrasi.</span>
                 </div>
               </div>
-              <div class="work-meta">
-                <div>
-                  <h3>Rapi Rumah</h3>
-                  <p>Konsep latihan · Bukan proyek klien</p>
-                </div>
-                <b>↗</b>
+              <div class="study-meta">
+                <h3>Katalog produk</h3>
+                <p>Kategori, harga, dan tautan menuju detail tiap produk.</p>
               </div>
             </article>
-            <article class="work reveal kotak">
-              <div class="work-visual movement-visual">
-                <div class="portfolio-browser movement-site">
-                  <div class="portfolio-bar">
-                    <span><i></i><i></i><i></i></span><small>gerak-studio</small>
-                  </div>
-                  <div class="site-nav">
-                    <b>GERAK STUDIO</b
-                    ><span>KELAS&nbsp;&nbsp; JADWAL&nbsp;&nbsp; KONTAK</span>
-                  </div>
-                  <div class="movement-main">
-                    <div>
-                      <small>STUDIO KEBUGARAN · TAMPILAN DEMO</small
-                      ><strong
-                        >Gerak lebih kuat,<br /><em>hidup lebih sehat.</em></strong
-                      >
-                      <p>
-                        Temukan kelas dan jadwal latihan yang cocok untukmu.
-                      </p>
-                      <button>Lihat kelas →</button>
-                    </div>
-                    <div class="movement-icon">🏋️</div>
-                  </div>
+            <article class="work study-card study-movement reveal">
+              <div class="study-visual">
+                <div class="study-top">
+                  <span>STUDI 03</span><span>NAMA & KONTEN HANYA CONTOH</span>
+                </div>
+                <div class="study-movement-copy">
+                  <span class="study-overline">STUDIO KEBUGARAN</span>
+                  <h3>Jadwal<br /><em>kelas.</em></h3>
+                </div>
+                <div class="study-schedule">
+                  <span class="study-schedule-label">SENIN · CONTOH JADWAL</span>
+                  <span><b>07.00</b>Yoga dasar · 45 menit</span>
+                  <span><b>09.00</b>Latihan beban · 60 menit</span>
+                  <span><b>16.30</b>Peregangan · 30 menit</span>
                 </div>
               </div>
-              <div class="work-meta">
-                <div>
-                  <h3>Gerak Studio</h3>
-                  <p>Konsep latihan · Bukan proyek klien</p>
-                </div>
-                <b>↗</b>
+              <div class="study-meta">
+                <h3>Halaman jadwal studio</h3>
+                <p>Jadwal, jenis kelas, durasi, dan informasi pendaftaran.</p>
               </div>
             </article>
-            <article class="work reveal kotak">
-              <div class="work-visual flower-visual">
-                <div class="portfolio-browser flower-site">
-                  <div class="portfolio-bar">
-                    <span><i></i><i></i><i></i></span><small>bunga-bumi</small>
-                  </div>
-                  <div class="site-nav">
-                    <b>BUNGA BUMI</b
-                    ><span>TANAMAN&nbsp;&nbsp; PANDUAN&nbsp;&nbsp; KERANJANG</span>
-                  </div>
-                  <div class="flower-main">
-                    <div>
-                      <small>TOKO TANAMAN & BUNGA</small
-                      ><strong>Bawa alam<br /><em>ke rumah.</em></strong>
-                      <p>
-                        Pilih tanaman dan bunga untuk menyegarkan ruangmu.
-                      </p>
-                      <button>Jelajahi koleksi →</button>
-                    </div>
-                    <div class="flower-product">
-                      <span>🌿</span><small>MONSTERA</small>
-                    </div>
-                  </div>
+            <article class="work study-card study-garden reveal">
+              <div class="study-visual">
+                <div class="study-top">
+                  <span>STUDI 04</span><span>NAMA & KONTEN HANYA CONTOH</span>
+                </div>
+                <div class="study-garden-copy">
+                  <span class="study-overline">PANDUAN TANAMAN · PEMULA</span>
+                  <h3>Merawat<br /><em>tanaman.</em></h3>
+                  <p>Panduan singkat untuk memilih tanaman sesuai kondisi ruangan.</p>
+                </div>
+                <div class="study-plant-notes">
+                  <span><b>01</b> Cek cahaya</span>
+                  <span><b>02</b> Pilih tanaman</span>
+                  <span><b>03</b> Atur siram</span>
                 </div>
               </div>
-              <div class="work-meta">
-                <div>
-                  <h3>Bunga Bumi</h3>
-                  <p>Konsep latihan · Bukan proyek klien</p>
-                </div>
-                <b>↗</b>
+              <div class="study-meta">
+                <h3>Panduan praktis</h3>
+                <p>Artikel ringkas, kategori tanaman, dan langkah perawatan.</p>
               </div>
             </article>
-            
           </div>
         </div>
       </section>
@@ -327,10 +346,11 @@
           <div>
             <div class="eyebrow">Alur pengerjaan</div>
             <h2>Empat langkah<br /><em>pengerjaan.</em></h2>
-            <p>
-              Tujuan dan isi dibahas lebih dulu. Desain ditinjau sebelum website mulai dibuat.
-            </p>
           </div>
+          <p>
+            Tujuan dan isi dibahas lebih dulu. Desain ditinjau sebelum website
+            mulai dibuat.
+          </p>
         </div>
         <div class="steps">
           <article class="step reveal">
@@ -372,12 +392,11 @@
               <h2>
                 Mulai dari <em> kebutuhanmu menjadi hemat 30%</em>
               </h2>
-              <p>
-                Setiap proyek dibangun sesuai kebutuhan, dengan pilihan paket yang
-                mudah dipahami dan harga yang bisa disesuaikan.
-              </p>
             </div>
-
+            <p>
+              Setiap proyek dibangun sesuai kebutuhan, dengan pilihan paket
+              yang mudah dipahami dan harga yang bisa disesuaikan.
+            </p>
           </div>
           <div class="info-grid">
             <article class="info-card reveal">
@@ -566,6 +585,7 @@
             ><label for="contact-service"
               >Butuh apa?<select id="contact-service" name="service" required>
                 <option value="">Pilih dulu</option>
+                <option>Konsultasi layanan</option>
                 <option>Landing Page</option>
                 <option>Company Profile</option>
                 <option>Website Custom</option>
@@ -584,21 +604,12 @@
               Teksnya bisa kamu sesuaikan.
             </p>
             <button class="button" type="submit">
-              Siapkan pesan WhatsApp ↗
+              Kirim langsung via WhatsApp ↗
             </button>
             <p class="status" id="contact-status" aria-live="polite">
               Formulir ini menyiapkan pesan. Pesan belum terkirim sampai kamu
               mengirimnya di WhatsApp.
             </p>
-            <a
-              class="contact-generated-link"
-              id="contact-whatsapp-link"
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              hidden
-              >Buka WhatsApp untuk mengirim pesan ↗</a
-            >
           </form>
         </div>
       </section>
